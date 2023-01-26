@@ -1,0 +1,72 @@
+[
+  {
+    "Name": "Miguel",
+    "Age": 34,
+    "Cpf": "362.418.524-18",
+    "Senha": "123",
+    "Pontuacao": 1
+  },
+  {
+    "Name": "Sophia",
+    "Age": 25,
+    "Cpf": "742.316.671-52",
+    "Senha": "123",
+    "Pontuacao": 3
+  },
+  {
+    "Name": "Davi",
+    "Age": 51,
+    "Cpf": "725.732.024-10",
+    "Senha": "123",
+    "Pontuacao": 0
+  },
+  {
+    "Name": "Alice",
+    "Age": 46,
+    "Cpf": "188.944.026-49",
+    "Senha": "123",
+    "Pontuacao": 0
+  },
+  {
+    "Name": "Arthur",
+    "Age": 21,
+    "Cpf": "432.594.262-99",
+    "Senha": "123",
+    "Pontuacao": 0
+  },
+  {
+    "Name": "Julia",
+    "Age": 42,
+    "Cpf": "475.250.344-19",
+    "Senha": "123",
+    "Pontuacao": 0
+  },
+  {
+    "Name": "Isabella",
+    "Age": 59,
+    "Cpf": "787.264.677-39",
+    "Senha": "123",
+    "Pontuacao": 0
+  },
+  {
+    "Name": "Gabriel",
+    "Age": 44,
+    "Cpf": "868.492.285-95",
+    "Senha": "123",
+    "Pontuacao": 0
+  },
+  {
+    "Name": "Bernardo",
+    "Age": 19,
+    "Cpf": "158.455.478-77",
+    "Senha": "123",
+    "Pontuacao": 0
+  },
+  {
+    "Name": "Ray",
+    "Age": 27,
+    "Cpf": "155.666.789.88",
+    "Senha": "123",
+    "Pontuacao": 0
+  }
+]

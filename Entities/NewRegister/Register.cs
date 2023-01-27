@@ -5,16 +5,7 @@ using System.Xml.Linq;
 namespace GameHub
 {
     public static class Register
-    {
-
-        public class DataRegister
-        {
-            public string Name { get; set; }
-            public int Age { get; set; }
-            public string Cpf { get; set; }
-            public string Senha { get; set; }
-            public int Pontuacao { get; set; }
-        }
+    {      
 
         public static List<DataRegister> Query = new();
 

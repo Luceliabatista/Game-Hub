@@ -2,7 +2,7 @@
 {
     class Program
     {
-        static void Main( string[] args )
+        static void Main(string[] args)
         {
             static void ShowMenu()
             {
@@ -12,15 +12,17 @@
                 Console.WriteLine("0 - Sair");
             }
 
-            Console.WriteLine("Olá! Seja Bem Vinda(o) ao ByteBank!\n");
+            Console.WriteLine("Olá! Seja Bem Vinda(o) ao Game!\n");
             int option;
 
 
-            do {
+            do
+            {
                 ShowMenu();
                 option = int.Parse(Console.ReadLine());
 
-                switch (option) {
+                switch (option)
+                {
                     case 0:
                         Console.Clear();
                         Console.WriteLine("Aplicação Encerrada!");
@@ -29,7 +31,7 @@
                         Register.RegistrarNovoUsuario();
                         break;
                     case 2:
-                        //Log.LogIn();
+                        DataLog.LogIn();
                         break;
                 }
             } while (option != 0);

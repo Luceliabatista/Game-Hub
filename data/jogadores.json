@@ -68,5 +68,33 @@
     "Cpf": "155.666.789.88",
     "Senha": "123",
     "Pontuacao": 0
+  },
+  {
+    "Name": "Lu",
+    "Age": 12,
+    "Cpf": "123",
+    "Senha": "123",
+    "Pontuacao": 0
+  },
+  {
+    "Name": "1",
+    "Age": 1,
+    "Cpf": "1",
+    "Senha": "1",
+    "Pontuacao": 0
+  },
+  {
+    "Name": "1",
+    "Age": 1,
+    "Cpf": "1",
+    "Senha": "1",
+    "Pontuacao": 0
+  },
+  {
+    "Name": "4",
+    "Age": 4,
+    "Cpf": "4",
+    "Senha": "4",
+    "Pontuacao": 0
   }
 ]

@@ -1,4 +1,4 @@
-﻿namespace GameHub
+﻿namespace GameHub.Entities
 {
     public class DataRegister
     {
@@ -7,7 +7,5 @@
         public string Cpf { get; set; } = null!;
         public string Senha { get; set; } = null!;
         public int Pontuacao { get; set; }
-
-     
     }
 }

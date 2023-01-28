@@ -1,6 +1,6 @@
-namespace GameHub
+namespace GameHub.Services
 {
-    public class ClassFinalizer
+    public class FinalizerClass
     {
         public static void Finalizer()
         {

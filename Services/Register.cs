@@ -1,13 +1,12 @@
+using GameHub.Entities;
 using Newtonsoft.Json;
 using System.Text.Json;
 using System.Xml.Linq;
 
-namespace GameHub
+namespace GameHub.Services
 {
     public static class Register
-    {      
-
-        public static List<DataRegister> Query = new();
+    {
 
         public static void RegistrarNovoUsuario()
         {
@@ -21,15 +20,15 @@ namespace GameHub
             Console.WriteLine("Digite o nome: ");
             dataRegister.Name = Console.ReadLine();
             Console.WriteLine("Digite a idade: ");
-            dataRegister.Age = (int.Parse(Console.ReadLine()));
+            dataRegister.Age = int.Parse(Console.ReadLine());
             Console.WriteLine("Digite a senha: ");
             dataRegister.Senha = Console.ReadLine();
             dataRegister.Pontuacao = 0;
-            SerializeDeserialize.Write<DataRegister>(@"C:\Users\lucel\SharpCoders\GameHub\GameHub\data\jogadores.json", dataRegister);
+            SerializeDeserialize.Write(@"C:\Users\lucel\SharpCoders\GameHub\GameHub\data\jogadores.json", dataRegister);
 
             Console.WriteLine("-----------------------------------");
             Console.WriteLine("Novo usuário registrado com sucesso!");
-            ClassFinalizer.Finalizer();
+            FinalizerClass.Finalizer();
         }
     }
 }

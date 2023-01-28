@@ -1,14 +1,16 @@
-using static GameHub.Register;
+using GameHub.Entities;
+using GameHub.Games.JogoDaVelha;
+using GameHub.Games.JogoDeXadrez;
+using static GameHub.Services.Register;
 
-namespace GameHub
+namespace GameHub.Services
 {
     public class DataLog
     {
 
-        public static List<DataRegister> Login = new();
-
         public static void LogIn()
         {
+            int option = 0;
             Console.Clear();
             List<DataRegister> dataLog = new();
             Console.WriteLine("   LOGIN   ");
@@ -25,11 +27,31 @@ namespace GameHub
                 Console.WriteLine("-----------------------------------");
                 Console.WriteLine("Não é possível exibir esta conta");
                 Console.WriteLine("MOTIVO: Conta não encontrada");
-                ClassFinalizer.Finalizer();
+                FinalizerClass.Finalizer();
             }
             else {
+                Console.Clear();
                 Console.WriteLine($"Olá {indexCpfParaLogar.Name}");
-            }
+                Menus.MenuJogos();
+                option = int.Parse(Console.ReadLine());
+
+                switch (option) {
+                    case 0:
+                        Console.Clear();
+                        Console.WriteLine("Aplicação Encerrada!");
+                        break;
+                    case 1:
+                        Game1.JogoDaVelha();
+                        break;
+                    case 2:
+                        Game2.JogoDeXadrez();
+                        break;
+                    case 3:
+                        DataLog.LogIn();
+                        break;
+                }
+            } while (option != 0) ;
+
         }
     }
 }

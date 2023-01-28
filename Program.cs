@@ -1,16 +1,13 @@
-﻿namespace GameHub
+﻿using GameHub.Entities;
+using GameHub.Services;
+
+namespace GameHub
 {
     class Program
     {
         static void Main(string[] args)
         {
-            static void ShowMenu()
-            {
-                Console.WriteLine("Por favor, digite a opção desejada: \n");
-                Console.WriteLine("1 - Criar conta de usuário");
-                Console.WriteLine("2 - Efetuar Login \n");
-                Console.WriteLine("0 - Sair");
-            }
+            
 
             Console.WriteLine("Olá! Seja Bem Vinda(o) ao Game!\n");
             int option;
@@ -18,7 +15,7 @@
 
             do
             {
-                ShowMenu();
+                Menus.MenuInicial();
                 option = int.Parse(Console.ReadLine());
 
                 switch (option)

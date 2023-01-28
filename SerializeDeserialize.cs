@@ -2,7 +2,7 @@
 using System.Net.Http.Json;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
-using static GameHub.Register;
+using static GameHub.Services.Register;
 
 namespace GameHub
 {

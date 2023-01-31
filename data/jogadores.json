@@ -25,14 +25,14 @@
     "Age": 46,
     "Cpf": "188.944.026-49",
     "Senha": "123",
-    "Pontuacao": 0
+    "Pontuacao": 5
   },
   {
     "Name": "Arthur",
     "Age": 21,
     "Cpf": "432.594.262-99",
     "Senha": "123",
-    "Pontuacao": 0
+    "Pontuacao": 3
   },
   {
     "Name": "Julia",
@@ -46,7 +46,7 @@
     "Age": 59,
     "Cpf": "787.264.677-39",
     "Senha": "123",
-    "Pontuacao": 0
+    "Pontuacao": 2
   },
   {
     "Name": "Gabriel",
@@ -60,41 +60,34 @@
     "Age": 19,
     "Cpf": "158.455.478-77",
     "Senha": "123",
+    "Pontuacao": 1
+  },
+  {
+    "Name": "Gabriela",
+    "Age": 16,
+    "Cpf": "868.492.285-75",
+    "Senha": "123",
     "Pontuacao": 0
+  },
+  {
+    "Name": "Breno",
+    "Age": 19,
+    "Cpf": "158.465.478-77",
+    "Senha": "123",
+    "Pontuacao": 2
   },
   {
     "Name": "Ray",
     "Age": 27,
     "Cpf": "155.666.789.88",
     "Senha": "123",
-    "Pontuacao": 0
+    "Pontuacao": 5
   },
   {
-    "Name": "Lu",
-    "Age": 12,
+    "Name": "Luc\u00E9lia",
+    "Age": 30,
     "Cpf": "123",
     "Senha": "123",
-    "Pontuacao": 0
-  },
-  {
-    "Name": "1",
-    "Age": 1,
-    "Cpf": "1",
-    "Senha": "1",
-    "Pontuacao": 0
-  },
-  {
-    "Name": "1",
-    "Age": 1,
-    "Cpf": "1",
-    "Senha": "1",
-    "Pontuacao": 0
-  },
-  {
-    "Name": "4",
-    "Age": 4,
-    "Cpf": "4",
-    "Senha": "4",
     "Pontuacao": 0
   }
 ]

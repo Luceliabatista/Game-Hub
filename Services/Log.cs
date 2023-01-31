@@ -1,4 +1,5 @@
 using GameHub.Entities;
+using GameHub.Games.BatalhaNaval;
 using GameHub.Games.JogoDaVelha;
 using GameHub.Games.JogoDeXadrez;
 using static GameHub.Services.Register;
@@ -47,7 +48,10 @@ namespace GameHub.Services
                         Game2.JogoDeXadrez();
                         break;
                     case 3:
-                        DataLog.LogIn();
+                        Game3.BatalhaNaval();
+                        break;
+                    case 4:
+                        Ranking.HistoricoPontuacao();
                         break;
                 }
             } while (option != 0) ;
@@ -55,3 +59,4 @@ namespace GameHub.Services
         }
     }
 }
+

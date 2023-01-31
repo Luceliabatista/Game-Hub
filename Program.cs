@@ -6,12 +6,9 @@ namespace GameHub
     class Program
     {
         static void Main(string[] args)
-        {
-            
-
+        {      
             Console.WriteLine("Olá! Seja Bem Vinda(o) ao Game!\n");
             int option;
-
 
             do
             {

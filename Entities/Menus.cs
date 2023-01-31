@@ -15,8 +15,9 @@ namespace GameHub.Entities
         {
             Console.WriteLine("Por favor, digite a opção do jogo que quer jogor: \n");
             Console.WriteLine("1 - Jogo da Velha");
-            Console.WriteLine("2 - Jogo de Xadrez \n");
-            Console.WriteLine("2 - Batalha Naval \n");
+            Console.WriteLine("2 - Jogo de Xadrez");
+            Console.WriteLine("3 - Batalha Naval");
+            Console.WriteLine("4 - Ranking \n");
             Console.WriteLine("0 - Sair");
         }
 

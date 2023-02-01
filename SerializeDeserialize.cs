@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using GameHub.Entities;
+using GameHub.Services;
+using Newtonsoft.Json;
 using System.Net.Http.Json;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
@@ -15,7 +17,7 @@ namespace GameHub
             return JsonConvert.DeserializeObject<List<T>>(text);
         }
 
-        public static void Write<T>(string fileName, T data)
+        public static void Write<T>( string fileName, T data )
         {
             List<T> Query = Read<T>(fileName);
 
@@ -27,5 +29,15 @@ namespace GameHub
             string jsonString = System.Text.Json.JsonSerializer.Serialize(Query, options);
             File.WriteAllText(fileName, jsonString);
         }
+
+        public static void SaveAll<T>( string fileName, List<T> Query )
+        {
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            //Serializando
+            string jsonString = System.Text.Json.JsonSerializer.Serialize(Query, options);
+            File.WriteAllText(fileName, jsonString);
+        }
+
+
     }
 }

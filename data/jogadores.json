@@ -88,6 +88,13 @@
     "Age": 30,
     "Cpf": "123",
     "Senha": "123",
+    "Pontuacao": 1
+  },
+  {
+    "Name": "147",
+    "Age": 147,
+    "Cpf": "147",
+    "Senha": "147",
     "Pontuacao": 0
   }
 ]

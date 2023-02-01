@@ -1,10 +1,13 @@
 ﻿
 using GameHub.Entities;
+using System.Data;
 
 namespace GameHub.Services
 {
     class Jogadores
     {
+        public static DataRegister PontuacaoX { get; set; }
+        public static DataRegister? PontuacaoO { get; set; }
         public static string CpfJogadorX { get; set; }
         public static string CpfJogadorO { get; set; }
         public static DataRegister JogadorDaRodada { get; set; }
@@ -51,5 +54,6 @@ namespace GameHub.Services
 
             JogadorDaRodada = JogadorX;
         }
+
     }
 }

@@ -11,6 +11,7 @@ namespace GameHub.Services
     public class Ranking
     {
         public static List<DataRegister> ContasDeUsuarios;
+        public static DataRegister Top5;
 
 
         public static void HistoricoPontuacao()
@@ -19,19 +20,7 @@ namespace GameHub.Services
 
             Console.WriteLine("Raking");
 
-
-            ContasDeUsuarios.Sort(delegate ( DataRegister p1, DataRegister p2 )
-            {
-                return (p1.Pontuacao.CompareTo(p2.Pontuacao));
-
-            });
-
-            ContasDeUsuarios.ForEach(delegate ( DataRegister p )
-            {
-                if (p.Pontuacao != 0) {
-                    Console.WriteLine(String.Format("{0} {1}", p.Name, p.Pontuacao));
-                }
-            });
+            
 
         }
     }

@@ -8,10 +8,12 @@ namespace GameHub.Services
 {
     public class DataLog
     {
+        public static int option = 0;
+        public static DataRegister IndexCpfParaLogar { get; set; }
+        public static DataRegister? IndexSenhaParaLogar { get; set; }
 
         public static void LogIn()
         {
-            int option = 0;
             Console.Clear();
             List<DataRegister> dataLog = new();
             Console.WriteLine("   LOGIN   ");
@@ -21,10 +23,11 @@ namespace GameHub.Services
             string senhaDeLogin = Console.ReadLine();
 
             dataLog = SerializeDeserialize.Read<DataRegister>(@"C:\Users\lucel\SharpCoders\GameHub\GameHub\data\jogadores.json");
-            DataRegister indexCpfParaLogar = dataLog.Find(cpf => cpf.Cpf == CpfDotitular);
-            DataRegister indexSenhaParaLogar = dataLog.Find(senha => senha.Senha == senhaDeLogin);
 
-            if (indexCpfParaLogar == null || indexSenhaParaLogar == null) {
+            IndexCpfParaLogar = dataLog.Find(cpf => cpf.Cpf == CpfDotitular);
+            IndexSenhaParaLogar = dataLog.Find(senha => senha.Senha == senhaDeLogin);
+
+            if (IndexCpfParaLogar == null || IndexSenhaParaLogar == null) {
                 Console.WriteLine("-----------------------------------");
                 Console.WriteLine("Não é possível exibir esta conta");
                 Console.WriteLine("MOTIVO: Conta não encontrada");
@@ -32,10 +35,16 @@ namespace GameHub.Services
             }
             else {
                 Console.Clear();
-                Console.WriteLine($"Olá {indexCpfParaLogar.Name}");
-                Menus.MenuJogos();
-                option = int.Parse(Console.ReadLine());
+                usuarioLogado();
+            }
+        }
 
+        public static void usuarioLogado()
+        {
+            Console.WriteLine($"Olá {IndexCpfParaLogar.Name}");
+            Menus.MenuJogos();
+            option = int.Parse(Console.ReadLine());
+            do {
                 switch (option) {
                     case 0:
                         Console.Clear();
@@ -54,8 +63,7 @@ namespace GameHub.Services
                         Ranking.HistoricoPontuacao();
                         break;
                 }
-            } while (option != 0) ;
-
+            } while (option != 0);
         }
     }
 }

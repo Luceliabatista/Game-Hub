@@ -12,6 +12,7 @@ namespace GameHub.Games.BatalhaNaval
         {
             try {
                 PartidaBTN partida = new();
+                Jogadores.DefinirJogadores();
 
                 while (!partida.Terminada) {
 

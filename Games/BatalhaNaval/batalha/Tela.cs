@@ -24,11 +24,20 @@ namespace GameHub.Games.BatalhaNaval.batalha
             Console.WriteLine();
             Console.WriteLine("Turno: " + partida.Turno);
             if (!partida.Terminada) {
-                Console.WriteLine("Aguardando a jogada: " + partida.JogadorAtual);
+                Console.WriteLine($"Aguardando a jogada de {Jogadores.JogadorDaRodada.Name}:");
             }
             else {
                 Console.WriteLine("FIM DE JOGO!!");
                 Console.WriteLine("VENCEDOR: " + partida.JogadorAtual);
+                if (Jogadores.JogadorX == Jogadores.JogadorDaRodada) {
+                    Jogadores.JogadorX.Pontuacao++;
+                    Jogadores.JogadorX.Save();
+                }
+                else {
+                    Jogadores.JogadorO.Pontuacao++;
+                    Jogadores.JogadorO.Save();
+                }
+
             }
         }
 

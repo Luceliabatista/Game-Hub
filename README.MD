@@ -11,7 +11,7 @@ Projeto desenvolvido em C#, com as seguintes ações:
 - Adicionar novo cadastro
 - Logar
 
-- Após o usuário estar logado, este possui acesso para executar:
+Após o usuário estar logado, este possui acesso para executar:
 
 - **Jogo da velha**
 - **Jogo de Xadrez**

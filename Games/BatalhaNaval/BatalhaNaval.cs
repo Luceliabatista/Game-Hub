@@ -3,6 +3,7 @@ using GameHub.Games.BatalhaNaval;
 using GameHub.Games.BatalhaNaval.batalha;
 using GameHub.Games.BatalhaNaval.pecas;
 using GameHub.Services;
+using Newtonsoft.Json.Linq;
 
 namespace GameHub.Games.BatalhaNaval
 {
@@ -13,25 +14,33 @@ namespace GameHub.Games.BatalhaNaval
             try {
                 PartidaBTN partida = new();
                 Jogadores.DefinirJogadores();
+                Console.Clear();
+                DefinicaoDePosicoesX.PosicionandoNaviosX();
+                DefinicaoDePosicoesO.PosicionandoNaviosO();
+                DefinicaoDePosicoesX.ExibirBaseX();
+                DefinicaoDePosicoesO.ExibirBaseO();
+                Console.WriteLine();
 
+                Console.WriteLine("Para prosseguir, tecle enter..");
+                Console.ReadLine();
+                Console.Clear();
                 while (!partida.Terminada) {
-
                     try {
-                        Jogadores.DefinirJogadores();
                         Console.Clear();
-                        DefinicaoDePosicoes.PosicionandoNavios();
-                        Console.WriteLine();
-                        Console.WriteLine();
                         Tela.ImprimirPartida(partida);
 
                         Console.WriteLine();
-                        Console.Write("Digite a linha e coluna do seu alvo, separando por virgula (ex: 4,5: )");
-                        Posicao origem = Tela.LerPosicaoBTN().ToPosicao();
-
+                        Console.Write("Digite a linha e coluna do seu alvo, separando por virgula (ex: 4,5: ): ");
+                        Posicao destino = Tela.LerPosicaoBTN().ToPosicao();
+                        //PartidaBTN.ExecutaMovimento(destino);
 
                         Console.Clear();
-                        
-                        Tela.ImprimirTabuleiroBTN(partida.Tab);
+
+                        Tela.ImprimirTabuleiroBTN(PartidaBTN.Tab);
+
+                        //PartidaBTN.ValidarAlvo(destino);
+
+                        //PartidaBTN.RealizaJogada(destino);
 
                     }
                     catch (TabuleiroException e) {

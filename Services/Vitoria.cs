@@ -9,18 +9,20 @@ namespace GameHub.Services
 {
     class Verificar
     {
-        public static DataRegister JogadorX { get; set; }
-        public static DataRegister JogadorO { get; set; }
+        public static DataRegister Jogador1 { get; set; }
+        public static DataRegister Jogador2 { get; set; }
         public static DataRegister Vitoria { get; set; }
 
 
         public static void ContadorVitoria()
         {
-            if (Vitoria == Jogadores.JogadorX) {
+            if (Vitoria == Jogadores.Jogador1)
+            {
                 Vitoria.Pontuacao++;
 
             }
-            else if (Vitoria == Jogadores.JogadorO) {
+            else if (Vitoria == Jogadores.Jogador2)
+            {
                 Vitoria.Pontuacao++;
             }
 

@@ -41,10 +41,10 @@ namespace GameHub.Services
 
         public static void usuarioLogado()
         {
+            do {
             Console.WriteLine($"Olá {IndexCpfParaLogar.Name}");
             Menus.MenuJogos();
             option = int.Parse(Console.ReadLine());
-            do {
                 switch (option) {
                     case 0:
                         Console.Clear();
@@ -61,6 +61,8 @@ namespace GameHub.Services
                         break;
                     case 4:
                         Ranking.HistoricoPontuacao();
+                        break;
+                    default:
                         break;
                 }
             } while (option != 0);

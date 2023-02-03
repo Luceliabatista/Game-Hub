@@ -3,25 +3,28 @@ using GameHub.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GameHub.Games.BatalhaNaval.pecas
 {
-    class DefinicaoDePosicoes
+    class DefinicaoDePosicoesX
     {
-        public static void PosicionandoNavios()
+        public static void PosicionandoNaviosX()
         {
-
             Console.WriteLine("Para iniciarmos a partida, antes é preciso definir onde seus navios serão posicionados");
-            Console.WriteLine("Seus navios são: 1 PortaAvioes, 1 Cruzador, 1 Contratorpedeiro, 1 Rebocador\n");
-            Console.WriteLine("Começaremos pelo REBOCADOR\n");
+            Console.WriteLine("Seus navios são: 1 Rebocador, 1 Contratorpedeiro, 1 Cruzador, 1 PortaAvioes\n");
+
+            Console.WriteLine("Começaremos por " + Jogadores.Jogador1.Name);
+            Console.WriteLine();
+            Console.WriteLine("Posicione o REBOCADOR\n");
 
             Console.WriteLine("Utilizando números de 0 a 7, e os separando por virgula (ex.: 1,2), informe:\n");
 
 
             //Rebocador
-            Rebocador.PosicionandoRebocador();
+            Rebocador.PosicionandoRebocadorX();
 
             //Contratorpedeiro
             //Contratorpedeiro.PosicionandoContratorpedeiro();
@@ -31,10 +34,13 @@ namespace GameHub.Games.BatalhaNaval.pecas
 
             ////PortaAvioes
             //PortaAvioes.PosicionandoPortaAvioes();
-
-
+        }
+        
+        public static void ExibirBaseX()
+        {
             Console.WriteLine();
-            Console.WriteLine($"Esta é sua base {Jogadores.JogadorX.Name}");
+            Console.Clear();
+            Console.WriteLine($"Esta é a base de {Jogadores.Jogador1.Name}");
             for (int i = 0; i < 8; i++) {
                 Console.Write(8 - i + " ");
                 for (int j = 0; j < 8; j++) {
@@ -57,6 +63,8 @@ namespace GameHub.Games.BatalhaNaval.pecas
                 Console.WriteLine();
             }
 
+           
         }
     }
 }
+

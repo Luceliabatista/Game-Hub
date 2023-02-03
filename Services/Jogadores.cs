@@ -8,11 +8,11 @@ namespace GameHub.Services
     {
         public static DataRegister PontuacaoX { get; set; }
         public static DataRegister? PontuacaoO { get; set; }
-        public static string CpfJogadorX { get; set; }
-        public static string CpfJogadorO { get; set; }
+        public static string CpfJogador1 { get; set; }
+        public static string CpfJogador2 { get; set; }
         public static DataRegister JogadorDaRodada { get; set; }
-        public static DataRegister JogadorX { get; set; }
-        public static DataRegister JogadorO { get; set; }
+        public static DataRegister Jogador1 { get; set; }
+        public static DataRegister Jogador2 { get; set; }
 
         public static List<DataRegister> ContasDeUsuarios = new();
 
@@ -22,37 +22,43 @@ namespace GameHub.Services
 
             Console.WriteLine($"Para iniciarmos o jogo, antes precisamos que defina quem são os usuários jogadores");
 
-            do {
-                Console.Write($"Digite o CPF do(a) jogador(a) X: ");
-                CpfJogadorX = Console.ReadLine();
-                JogadorX = ContasDeUsuarios.Find(usuario => usuario.Cpf == CpfJogadorX);
+            do
+            {
+                Console.Write($"Digite o CPF do(a) 1ª jogador(a): ");
+                CpfJogador1 = Console.ReadLine();
+                Jogador1 = ContasDeUsuarios.Find(usuario => usuario.Cpf == CpfJogador1);
 
-                if (JogadorX == null) {
-                    Console.WriteLine("Jogador X ainda não cadastrado!");
+                if (Jogador1 == null)
+                {
+                    Console.WriteLine("Jogador ainda não cadastrado!");
                     break;
                 }
-                else {
-                    Console.WriteLine($"Jogador X é o: {JogadorX.Name}");
+                else
+                {
+                    Console.WriteLine($"Jogador é o: {Jogador1.Name}");
                 }
 
-            } while (JogadorX == null);
+            } while (Jogador1 == null);
 
-            do {
-                Console.Write($"Digite o CPF do(a) jogador(a) O: ");
-                CpfJogadorO = Console.ReadLine();
-                JogadorO = ContasDeUsuarios.Find(usuario => usuario.Cpf == CpfJogadorO);
+            do
+            {
+                Console.Write($"Digite o CPF do(a) 2º jogador(a): ");
+                CpfJogador2 = Console.ReadLine();
+                Jogador2 = ContasDeUsuarios.Find(usuario => usuario.Cpf == CpfJogador2);
 
-                if (JogadorO == null) {
-                    Console.WriteLine("Jogador O ainda não cadastrado!");
+                if (Jogador2 == null)
+                {
+                    Console.WriteLine("Jogador ainda não cadastrado!");
                     break;
                 }
-                else {
-                    Console.WriteLine($"Jogador X é o: {JogadorO.Name}");
+                else
+                {
+                    Console.WriteLine($"Jogador é o: {Jogador2.Name}");
 
                 }
-            } while (JogadorO == null);
+            } while (Jogador2 == null);
 
-            JogadorDaRodada = JogadorX;
+            JogadorDaRodada = Jogador1;
         }
 
     }

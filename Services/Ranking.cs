@@ -22,18 +22,21 @@ namespace GameHub.Services
             List<DataRegister> ContasDeUsuarios = new();
             ContasDeUsuarios = SerializeDeserialize.Read<DataRegister>(@"C:\Users\lucel\SharpCoders\GameHub\GameHub\data\jogadores.json");
 
-            var InDescOrder = ContasDeUsuarios.OrderByDescending(s => s.Pontuacao);
-
-
-            int cont = 0;
-            foreach (var player in InDescOrder) {
-                do {
-                    for (int i = 0; i < 5; ++i) {
-                        Console.WriteLine($"{player.Name}: {player.Pontuacao}");
-                    }
-                    cont++;
-                } while (cont < 5);
+            var InDescOrder = ContasDeUsuarios.OrderByDescending(s => s.Pontuacao).ToList();
+            Console.Clear();
+            Console.WriteLine("Ranking: Top 5 ");
+            Console.WriteLine();
+            for (int i = 0; i < InDescOrder.Count; ++i) {
+                if (i == 5) {
+                    break;
+                }
+                else {
+                    var player = InDescOrder[i];
+                    Console.WriteLine($"{player.Name}: {player.Pontuacao}");
+                }
             }
+            Console.WriteLine();
+            FinalizerClass.Finalizer();
         }
 
 

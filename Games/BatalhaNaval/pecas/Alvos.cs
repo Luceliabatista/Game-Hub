@@ -7,17 +7,15 @@ namespace GameHub.Games.BatalhaNaval.pecas
         public Posicao Posicao { get; set; }
         public Navios Navio { get; protected set; }
         public Cor Cor { get; protected set; }
-        public int QteMunicao { get; protected set; }
+        public int QteMovimentos { get; protected set; }
         public TabuleiroBTN TabuleiroBTN { get; protected set; }
         public TabuleiroBTN Tab { get; }
         bool[,] mat;
 
-        public Alvo( Cor cor, Navios navio, TabuleiroBTN tab )
+        public Alvo( TabuleiroBTN tab )
         {
             Posicao = null;
-            Navio = navio;
-            Cor = cor;
-            QteMunicao = 0;
+            QteMovimentos = 0;
             Tab = tab;
         }
 
@@ -33,16 +31,15 @@ namespace GameHub.Games.BatalhaNaval.pecas
             return false;
         }
 
-        public void IncrementarQteMunicao()
+        public void IncrementarQteMovimentos()
         {
-            QteMunicao++;
+            QteMovimentos++;
         }
 
-        public void DecrementarQteMunicao()
+        public void DecrementarQteMovimentos()
         {
-            QteMunicao--;
+            QteMovimentos--;
         }
-
     }
 }
 

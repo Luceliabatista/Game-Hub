@@ -6,13 +6,7 @@ namespace GameHub.Games.BatalhaNaval.pecas
 {
     class Rebocador : Alvo
     {
-        public Rebocador( TabuleiroBTN tab) : base(tab) { }
-
-        public override string ToString()
-        {
-            return "R ";
-        }
-
+        public Rebocador( TabuleiroBTN tab ) : base(tab) { }
 
         public static int LinhaInicialRebocador { get; set; }
         public static int ColunaInicialRebocador { get; set; }
@@ -22,6 +16,8 @@ namespace GameHub.Games.BatalhaNaval.pecas
         public static int ColunaInicialRebocadorO { get; set; }
         public static int LinhaFinalRebocadorO { get; set; }
         public static int ColunaFinalRebocadorO { get; set; }
+
+        
         public static void PosicionandoRebocadorX()
         {
 
@@ -57,5 +53,21 @@ namespace GameHub.Games.BatalhaNaval.pecas
 
         }
 
+        private bool PodeMover( Posicao pos )
+        {
+            Alvo p = Tab.Alvo(pos);
+            return p == null;
+        }
+        public override bool[,] MovimentosPossiveis()
+        {
+            bool[,] mat = new bool[Tab.Linhas, Tab.Colunas];
+
+            Posicao pos = new(0, 0);
+
+            if (Tab.PosicaoValida(pos) && PodeMover(pos)) {
+                mat[pos.Linha, pos.Coluna] = true;
+            }
+            return mat;
+        }
     }
 }

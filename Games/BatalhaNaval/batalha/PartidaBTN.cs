@@ -32,76 +32,65 @@ namespace GameHub.Games.BatalhaNaval.batalha
             Capturadas = new HashSet<Alvo>();
         }
 
-        public static Alvo ExecutaMovimento(Posicao destino )
+        public static void ExecutaMovimento( Posicao destino )
         {
-            Alvo p = Tab.RetirarAlvo(destino);
-            p.IncrementarQteMovimentos();
-            Alvo alvoCapturado = Tab.RetirarAlvo(destino);
-            //Tab.AtingirAlvo(p, destino);
-            if (alvoCapturado != null)
-            {
-                Capturadas.Add(alvoCapturado);
+            if (JogadorDaRodada == Jogador1) {
+                if (destino.Linha != Rebocador.LinhaInicialRebocadorO && destino.Coluna != Rebocador.ColunaInicialRebocadorO || destino.Linha != Rebocador.LinhaFinalRebocadorO && destino.Coluna != Rebocador.ColunaFinalRebocadorO) {
+                    Console.Write(" X ");
+                }
+                else {
+                    Alvo p = Tab.RetirarAlvo(destino);
+                    p.IncrementarQteMovimentos();
+                    Alvo alvoCapturado = Tab.RetirarAlvo(destino);
+                    if (alvoCapturado != null) {
+                        Capturadas.Add(alvoCapturado);
+                    }
+                }
+            }
+            if (JogadorDaRodada == Jogador2) {
+                if (destino.Linha != Rebocador.LinhaInicialRebocador && destino.Coluna != Rebocador.ColunaInicialRebocador || destino.Linha != Rebocador.LinhaFinalRebocador && destino.Coluna != Rebocador.ColunaFinalRebocador) {
+                    Console.Write(" X ");
+                }
+                else {
+                    Alvo p = Tab.RetirarAlvo(destino);
+                    p.IncrementarQteMovimentos();
+                    Alvo alvoCapturado = Tab.RetirarAlvo(destino);
+                    if (alvoCapturado != null) {
+                        Capturadas.Add(alvoCapturado);
+                    }
+                }
             }
 
-            return alvoCapturado;
         }
 
         public static void RealizaJogada( Posicao destino )
         {
-            if (JogadorDaRodada == Jogador1) {
-                if( destino.Linha != Rebocador.LinhaInicialRebocadorO && destino.Coluna != Rebocador.ColunaInicialRebocadorO ||  destino.Linha !=  Rebocador.LinhaFinalRebocadorO &&  destino.Coluna != Rebocador.ColunaFinalRebocadorO) {
-                    Console.Write(" X ");
-                }
-                else {
-                    
-                }
-            }
-            //else {
-            //    if (destino != Rebocador.LinhaInicialRebocador && destino != Rebocador.ColunaInicialRebocador || destino != Rebocador.LinhaFinalRebocador && destino != Rebocador.ColunaFinalRebocador)
-            //}
-            //Alvo alvoCapturado = ExecutaMovimento(destino);
-
+            ExecutaMovimento(destino);
             Turno++;
             MudaJogador();
         }
-
-        //public static void ValidarAlvo(Posicao destino )
-        //{
-        //    if (Tab.Alvo(destino) == Alvo) {
-        //        return;
-        //    }
-        //    throw new TabuleiroException("Posição de destino inválida!");
-        //}
-
-        //VALIDAR SE TENHO MUNICAO P ATIRAR
-
-
 
         public static void MudaJogador()
         {
             JogadorAtual = JogadorDaRodada == Jogador1 ? Jogador2 : Jogador1;
         }
 
-        public HashSet<Alvo> AlvoCapturados(Cor cor)
+        public HashSet<Alvo> AlvoCapturados( Cor cor )
         {
             HashSet<Alvo> aux = new();
-            foreach (Alvo x in Capturadas)
-            {
-                if (x.Cor == cor)
-                {
+            foreach (Alvo x in Capturadas) {
+                if (x.Cor == cor) {
                     aux.Add(x);
                 }
             }
             return aux;
         }
 
-        public HashSet<Alvo> AlvoEmJogo(Cor cor)
+        public HashSet<Alvo> AlvoEmJogo( Cor cor )
         {
             HashSet<Alvo> aux = new();
-            foreach (Alvo x in Alvo)
-            {
-                if (x.Cor == cor)
-                {
+            foreach (Alvo x in Alvo) {
+                if (x.Cor == cor) {
                     aux.Add(x);
                 }
             }
@@ -109,14 +98,12 @@ namespace GameHub.Games.BatalhaNaval.batalha
             return aux;
         }
 
-        private static Cor Adversaria(Cor cor)
+        private static Cor Adversaria( Cor cor )
         {
-            if (cor == Cor.Branca)
-            {
+            if (cor == Cor.Branca) {
                 return Cor.Preta;
             }
-            else
-            {
+            else {
                 return Cor.Branca;
             }
         }

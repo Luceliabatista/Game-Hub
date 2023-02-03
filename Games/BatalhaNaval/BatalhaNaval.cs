@@ -32,15 +32,12 @@ namespace GameHub.Games.BatalhaNaval
                         Console.WriteLine();
                         Console.Write("Digite a linha e coluna do seu alvo, separando por virgula (ex: 4,5: ): ");
                         Posicao destino = Tela.LerPosicaoBTN().ToPosicao();
-                        //PartidaBTN.ExecutaMovimento(destino);
 
                         Console.Clear();
 
                         Tela.ImprimirTabuleiroBTN(PartidaBTN.Tab);
 
-                        //PartidaBTN.ValidarAlvo(destino);
-
-                        //PartidaBTN.RealizaJogada(destino);
+                        PartidaBTN.RealizaJogada(destino);
 
                     }
                     catch (TabuleiroException e) {

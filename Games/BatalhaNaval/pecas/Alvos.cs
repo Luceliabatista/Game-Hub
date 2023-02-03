@@ -2,7 +2,7 @@
 
 namespace GameHub.Games.BatalhaNaval.pecas
 {
-    class Alvo
+   abstract class Alvo
     {
         public Posicao Posicao { get; set; }
         public Navios Navio { get; protected set; }
@@ -40,6 +40,9 @@ namespace GameHub.Games.BatalhaNaval.pecas
         {
             QteMovimentos--;
         }
+
+        public bool MovimentoPossivel( Posicao pos ) { return MovimentosPossiveis()[pos.Linha, pos.Coluna]; }
+        public abstract bool[,] MovimentosPossiveis();
     }
 }
 

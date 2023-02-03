@@ -13,10 +13,10 @@ Projeto desenvolvido em C#, com as seguintes ações:
 
 - Após o usuário estar logado, este possui acesso para executar:
 
-**Jogo da velha**
-**Jogo de Xadrez**
-**Batalha Naval**
-**Ranking: Top 5**
+- **Jogo da velha**
+- **Jogo de Xadrez**
+- **Batalha Naval**
+- **Ranking: Top 5**
 
 - Todo acesso ocorre via console.
 - Ao iniciar cada jogo, é necessário definir quem serão os 2 jogadores que estão disputando a partida.
